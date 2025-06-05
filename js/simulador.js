@@ -1,15 +1,15 @@
-// Variables generales
+
 const equipajeBase = ["documentos", "ropa ligera","traje de baño","protector solar"];
 let dias, presupuesto, mes;
 
-//Entrada de datos
+
 function pedirDatos() {
     dias = parseInt(prompt("¿Cuántos días vas a estar en Buzios?"));
     presupuesto = parseFloat(prompt("¿Cuál es tu presupuesto total en reales (R$)?"));
     mes = prompt("¿En qué mes vas a viajar? (escribí el mes en minúsculas)");
 }
 
-// Procesamiento de datos
+
 function analizarPresupuesto() {
     const diario = presupuesto / dias;
     console.log("Presupuesto diario: R$${diario.toFixed(2)}");
@@ -23,7 +23,7 @@ function analizarPresupuesto() {
 }
 }
 
-//Recomendaciones según el mes
+
 function sugerirActividades() {
     let actividades = [];
 
@@ -49,7 +49,7 @@ function sugerirActividades() {
 
 }
 
-// Salida final con sugerencias de equipaje
+
 function recomendarEquipaje() {
     const incluirExtra = confirm("¿Querés recomendaciones extras según el mes?");
     if (incluirExtra && (mes === "junio" || mes === "julio")) {
@@ -62,7 +62,7 @@ function recomendarEquipaje() {
     }
 
     
-    // Ejecutar el simulador
+    
     pedirDatos();
     analizarPresupuesto();
     sugerirActividades();
