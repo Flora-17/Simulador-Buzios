@@ -1,0 +1,22 @@
+@use "variables";
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: variables.$color-light-bg;
+  color: variables.$color-dark-text;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+
+body.dark-mode {
+  background-color: variables.$color-dark-bg;
+  color: variables.$color-dark-text;
+}

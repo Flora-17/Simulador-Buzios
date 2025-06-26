@@ -1,0 +1,65 @@
+@use "../base/variables";
+
+#resultado {
+  margin-top: 2rem;
+  background-color: variables.$color-light-accent;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+
+  section {
+    margin-bottom: 1.5rem;
+
+    h3 {
+      margin-bottom: 0.5rem;
+      color: variables.$color-dark-text;
+    }
+
+    p, li {
+      margin: 0.2rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+body.dark-mode #anterior {
+  background-color: #1b2a34;
+  border-color: variables.$color-dark-accent;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #38b000;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.dark-mode .toast {
+  background-color: #70e000;
+  color: #1b1b1b;
+}

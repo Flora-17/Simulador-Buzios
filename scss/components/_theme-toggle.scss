@@ -1,0 +1,16 @@
+@use "../base/variables";
+
+.toggle-theme {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  padding: 8px 10px;
+  background: none;
+  border: 2px solid variables.$color-light-accent;
+  border-radius: 5px;
+  color: variables.$color-light-accent;
+  cursor: pointer;
+}
+
+

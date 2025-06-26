@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  .main-header h1 {
+    font-size: 1.2rem;
+  }
+  #resultado {
+    font-size: 0.95rem;
+  }
+  button {
+    width: 100%;
+  }
+}/*# sourceMappingURL=responsive.css.map */

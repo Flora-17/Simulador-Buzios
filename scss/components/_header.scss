@@ -1,0 +1,29 @@
+@use "../base/variables" as variables;
+
+
+
+.main-header.dark-mode {
+  background-color:black;
+}
+
+
+
+.main-header {
+  background-color: variables.$color-accent;
+  color: #000000;
+  padding: 1rem 0;
+
+  .container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}

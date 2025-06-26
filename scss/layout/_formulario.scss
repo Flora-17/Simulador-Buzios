@@ -1,0 +1,27 @@
+@use "../base/variables";
+
+.formulario-container {
+  background-color: variables.$color-light-bg;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(variables.$color-dark-text, 0.1);
+
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: variables.$color-dark-text;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    margin-top: 1.5rem;
+  }
+}
