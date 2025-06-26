@@ -10,14 +10,13 @@
 
 </head>
 <body>
-  <div id="toast" class="toast" style="display: none;">Itinerario generado con éxito ✅</div>
-<header class="bg-primary text-white py-3 shadow">
+  <header class="bg-primary text-white py-3 shadow">
   <div class="container d-flex justify-content-between align-items-center flex-wrap">
     <h1 class="h3 m-0">Simulador de viaje a Búzios</h1>
     <button id="toggle-theme" class="btn btn-light btn-sm ms-3 mt-2 mt-sm-0" aria-label="Cambiar tema">
       Cambiar tema
     </button>
-  </div>
+  <div id="toast" class="toast" style="display: none;">Itinerario generado con éxito ✅</div>
 </header>
 <div class="container my-4">
   <form id="form-viaje" class="bg-light p-4 rounded shadow-sm">
@@ -73,9 +72,8 @@
 </div>
 
 
+<section id="resultado" class="container"></section>
 
-
-<button id="btn-ver-resultado" class="btn-primary" style="display:none;">Ver Resultado</button>
 
 <section id="anterior" class="container" style="display: none;">
   <h2>🎒 Ya generaste un itinerario</h2>
@@ -83,7 +81,7 @@
   <button id="verAnterior">Ver itinerario anterior</button>
 </section>
 
-<section id="resultado" class="container"></section>
+
 
   <script src="js/simulador.js"></script>  
 </body>
