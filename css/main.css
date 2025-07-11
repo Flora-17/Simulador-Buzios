@@ -13,10 +13,6 @@ body {
   padding: 2rem 1rem;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
 
 button,
 .btn-primary {
@@ -55,9 +51,6 @@ input, select {
   width: 100%;
 }
 
-.main-header.dark-mode {
-  background-color: black;
-}
 
 .main-header {
   background-color: #c1d3ee;
@@ -117,10 +110,7 @@ input, select {
   transform: translateY(0);
 }
 
-body.dark-mode #anterior {
-  background-color: #1b2a34;
-  border-color: #00b4d8;
-}
+
 
 .toast {
   position: fixed;
@@ -144,10 +134,7 @@ body.dark-mode #anterior {
   pointer-events: auto;
 }
 
-body.dark-mode .toast {
-  background-color: #70e000;
-  color: #1b1b1b;
-}
+
 
 @media (max-width: 600px) {
   .main-header h1 {

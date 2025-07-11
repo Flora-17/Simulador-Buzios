@@ -1,16 +1,8 @@
-@use "../base/variables" as variables;
-
-
-
-.main-header.dark-mode {
-  background-color:black;
-}
-
-
+@use "../base/variables" as v;
 
 .main-header {
-  background-color: variables.$color-accent;
-  color: #000000;
+  background-color: v.$color-accent;
+  color: v.$color-light-text;
   padding: 1rem 0;
 
   .container-header {
@@ -18,12 +10,15 @@
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
   h1 {
     font-size: 1.6rem;
     margin: 0;
+    
   }
+
+
 }

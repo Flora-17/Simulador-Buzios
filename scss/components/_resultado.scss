@@ -33,10 +33,7 @@
 }
 
 
-body.dark-mode #anterior {
-  background-color: #1b2a34;
-  border-color: variables.$color-dark-accent;
-}
+
 .toast {
   position: fixed;
   top: 20px;
@@ -59,7 +56,3 @@ body.dark-mode #anterior {
   pointer-events: auto;
 }
 
-body.dark-mode .toast {
-  background-color: #70e000;
-  color: #1b1b1b;
-}

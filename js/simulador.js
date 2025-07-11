@@ -1,17 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 🌙 MODO OSCURO
-  const modoOscuroActivo = localStorage.getItem("modoOscuro") === "true";
-  if (modoOscuroActivo) {
-    document.body.classList.add("dark-mode");
-    document.querySelector(".main-header")?.classList.add("dark-mode");
-  }
 
-  const toggleBtn = document.getElementById("toggle-theme");
-  toggleBtn?.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    document.querySelector(".main-header")?.classList.toggle("dark-mode");
-    localStorage.setItem("modoOscuro", document.body.classList.contains("dark-mode"));
-  });
 
   // 🧾 FORMULARIO Y PASOS
   const form = document.getElementById("form-viaje");
@@ -21,6 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVolver = document.getElementById("btn-volver");
   const resultado = document.getElementById("resultado");
   const btnVerResultado = document.getElementById("btn-ver-resultado");
+
+fetch("data/prestadores.json")
+  .then(res => res.json())
+  .then(data => {
+    const contenedor = document.getElementById("prestadores");
+    const lista = document.getElementById("lista-prestadores");
+    lista.innerHTML = data.map(p => `
+      <li class="list-group-item">
+        <strong>${p.nombre}</strong> - ${p.servicio}<br>
+        <small>📧 ${p.contacto}</small>
+      </li>
+    `).join("");
+    contenedor.style.display = "block";
+  })
+  .catch(error => {
+    console.error("Error al cargar prestadores:", error);
+  });
 
   // Paso 1 → Paso 2
   btnSiguiente?.addEventListener("click", () => {
@@ -78,6 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("viajeBuzios")) {
     seccionAnterior.style.display = "block";
   }
+// Precargar datos si ya existen
+const datosGuardados = localStorage.getItem("viajeBuzios");
+if (datosGuardados) {
+  const { mes, dias, presupuesto, incluirExtra } = JSON.parse(datosGuardados);
+  document.getElementById("mes").value = mes;
+  document.getElementById("dias").value = dias;
+  document.getElementById("presupuesto").value = presupuesto;
+  document.getElementById("extra").checked = incluirExtra || false;
+}
 
   btnVerAnterior?.addEventListener("click", () => {
     const data = JSON.parse(localStorage.getItem("viajeBuzios"));
@@ -168,13 +182,14 @@ function guardarEnLocalStorage(data) {
 }
 
 function mostrarToast(mensaje) {
-  const toast = document.getElementById("toast");
-  toast.textContent = mensaje;
-  toast.classList.add("show");
-  toast.style.display = "block";
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-    toast.style.display = "none";
-  }, 3000);
+  Swal.fire({
+    toast: true,
+    position: 'top-end',
+    icon: 'success',
+    title: mensaje,
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+  });
 }
+
